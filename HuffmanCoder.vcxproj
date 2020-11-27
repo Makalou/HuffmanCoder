@@ -145,6 +145,9 @@
     <ClCompile Include="stat.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="heap.h" />
+    <ClInclude Include="huffmanNode.h" />
+    <ClInclude Include="huffmanTree.h" />
     <ClInclude Include="kernel.h" />
     <ClInclude Include="user_interface.h" />
     <ClInclude Include="stat.h" />

@@ -4,8 +4,9 @@
 void stat(std::ifstream& text) {
 	memset(freq_table, 0, sizeof(freq_table));
 	char c;
-	while(text>>c)
+	while (text >> c) {
 		freq_table[c]++;
+	}
 }
 
 void freq_table_out(std::ostream& out) {

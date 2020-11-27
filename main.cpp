@@ -9,6 +9,8 @@
 int main()
 {
 	std::cout << "»¶Ó­Ê¹ÓÃ»ô·òÂü±àÂëÆ÷" << std::endl;
+	const char* seq = "01000001010000100100001101000100";
+	std::string r;
 	while (true)
 	{
 		show_hint();

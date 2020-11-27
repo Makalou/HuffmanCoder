@@ -38,5 +38,14 @@
     <ClInclude Include="stat.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="huffmanTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="huffmanNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="heap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
