@@ -2,9 +2,12 @@
 #include <iostream>
 void show_hint()
 {
-		std::cout<< "请选择操作" << std::endl
+	std::cout << std::endl
+		<<"*********************"<<std::endl
+		<< "请选择操作" << std::endl
 		<< "1." << std::endl
 		<< "2." << std::endl
 		<< "3." << std::endl
-		<< "4.退出" << std::endl;
+		<< "4.退出" << std::endl
+		<< "*********************" << std::endl;
 }

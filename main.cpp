@@ -2,8 +2,6 @@
 #include "user_interface.h"
 #include <conio.h>
 #include "kernel.h"
-#include <iostream>
-#include <fstream>
 
 
 int main()

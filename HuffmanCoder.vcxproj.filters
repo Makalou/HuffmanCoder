@@ -30,6 +30,9 @@
     <ClCompile Include="comparation.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="huffmanTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user_interface.h">

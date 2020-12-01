@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="comparation.cpp" />
+    <ClCompile Include="huffmanTree.cpp" />
     <ClCompile Include="kernel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="user_interface.cpp" />
