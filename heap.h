@@ -9,11 +9,18 @@ private:
 	void siftdown(int pos) {
 		while (!isLeaf(pos)) {
 			int j = leftchild(pos);
-			if ((rc < n) && Comp::prior(Heap[rc], Heap[j]) )j = rc;
+			int rc = rightchild(pos);
+			if ((rc < n) && Comp::prior(Heap[rc], Heap[j]) ) j = rc;
 			if (Comp::prior(Heap[pos], Heap[j])) return;
 			swap(Heap, pos, j);
 			pos = j;
 		}
+	}
+
+	void swap(E* h, int a, int b) {
+		E temp = h[a];
+		h[a] = h[b];
+		h[b] = temp;
 	}
 public:
 	heap(E* h, int num, int max) :Heap(h), n(num), maxsize(max) {
@@ -30,7 +37,7 @@ public:
 		int curr = n++;
 		Heap[curr] = it;
 
-		while ((cur != 0) && (Comp::prior(Heap[curr], Heap[parent(curr)]))) {
+		while ((curr != 0) && (Comp::prior(Heap[curr], Heap[parent(curr)]))) {
 			swap(Heap, curr, parent(curr));
 		}
 	}

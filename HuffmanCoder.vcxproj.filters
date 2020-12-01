@@ -27,6 +27,9 @@
     <ClCompile Include="stat.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="comparation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user_interface.h">
@@ -45,6 +48,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="heap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="comparation.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,7 +9,6 @@
 int main()
 {
 	std::cout << "»¶Ó­Ê¹ÓÃ»ô·òÂü±àÂëÆ÷" << std::endl;
-	const char* seq = "01000001010000100100001101000100";
 	std::string r;
 	while (true)
 	{
@@ -18,13 +17,13 @@ int main()
 		switch (choice)
 		{
 		case '1':
-			method1();
+			process1();
 			break;
 		case '2':
-			method2();
+			process2();
 			break;
 		case '3':
-			method3();
+			process3();
 			break;
 		case '4':
 			goto END;

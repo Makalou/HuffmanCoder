@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="comparation.cpp" />
     <ClCompile Include="kernel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="user_interface.cpp" />
     <ClCompile Include="stat.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="comparation.h" />
     <ClInclude Include="heap.h" />
     <ClInclude Include="huffmanNode.h" />
     <ClInclude Include="huffmanTree.h" />
