@@ -10,7 +10,7 @@ public:
 	~HuffmanTree();
 	void build();
 	void code();
-	std::string& decode(std::string& huffmanseq);
+	void decode(std::string& huffmanseq, std::string& result);
 	void clear();
 	std::string getHuffmanCode(char c);
 	void print(std::ostream& out);
@@ -19,6 +19,7 @@ private:
 	HuffmanNode** huffman_array;
 	HuffmanNode* root;
 	int count;
+	int num_of_char;
 	std::string currentPath;
 
 	void clear_helper(HuffmanNode* node);

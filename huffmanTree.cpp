@@ -2,12 +2,15 @@
 
 HuffmanTree::HuffmanTree(int* freq_table) {
 	count = 0;
+	num_of_char = 0;
 	root = nullptr;
 	for (int i = 0; i < 128; i++) {
 		if (freq_table[i] != 0) {
 			count++;
+			num_of_char += freq_table[i];
 		}
 	}
+	std::cout << num_of_char << std::endl;
 	huffman_array = new HuffmanNode * [count];
 	int n = 0;
 	for (int i = 0; i < 128; i++) {
@@ -39,16 +42,15 @@ void HuffmanTree::build() {
 
 void HuffmanTree::code() {
 	code_helper(root);
-
 }
 
-std::string& HuffmanTree::decode(std::string& huffmanseq) {
+void HuffmanTree::decode(std::string& huffmanseq,std::string& result) {
 	int i = 0;
-	std::string result;
-	while (i < huffmanseq.size()) {
+	int n = 0;
+	while (i < huffmanseq.size()&&n<num_of_char) {
 		result += decode_helper(root, huffmanseq, i);
+		n++;
 	}
-	return result;
 }
 
 void HuffmanTree::clear() {
@@ -63,10 +65,18 @@ std::string HuffmanTree::getHuffmanCode(char c) {
 }
 
 void HuffmanTree::print(std::ostream& out) {
-	out << "×Ö·û" << "Æµ¶È" << "»ô·òÂü±àÂë" << std::endl;
 	for (int i = 0; i < count; i++) {
 		HuffmanNode* node = huffman_array[i];
-		out << node->getValue() << "   " << node->getfreq() << "    " << node->getCode() << std::endl;
+		if (node->getValue() == '\n') {
+			out << "\\n" << "\t" << node->getfreq() << "\t" << node->getCode() << std::endl;
+		}
+		else if (node->getValue() == ' ') {
+			out << "space" << "\t" << node->getfreq() << "\t" << node->getCode() << std::endl;
+		}
+		else {
+			std::string s(1,node->getValue());
+			out << s << "\t" << node->getfreq() << "\t" << node->getCode() << std::endl;
+		}
 	}
 }
 
@@ -90,7 +100,13 @@ void HuffmanTree::clear_helper(HuffmanNode* node) {
 	delete node;
 }
 void HuffmanTree::code_helper(HuffmanNode* root) {
+	static int index = 1;
 	if (root != nullptr) {
+		if (root->getleft() == NULL && root->getright() == NULL && index == 1) {
+			currentPath += "0";
+		}
+		index = 0;
+
 		if (!root->isleaf()) {
 			currentPath += '0';
 			code_helper(root->getleft());
@@ -105,14 +121,9 @@ void HuffmanTree::code_helper(HuffmanNode* root) {
 		}
 	}
 }
+
 char HuffmanTree::decode_helper(HuffmanNode* node, std::string& huffmanseq, int& i) {
 	if (node->isleaf())  return node->getValue();
-	if (huffmanseq[i] == '0') {
-		i++;
-		return decode_helper(node->getleft(), huffmanseq, i);
-	}
-	if (huffmanseq[i] == '1') {
-		i++;
-		return decode_helper(node->getright(), huffmanseq, i);
-	}
+	if (i + 1 > huffmanseq.size()) return ' ';
+	return decode_helper(huffmanseq[i++] == '0' ? node->getleft() : node->getright(), huffmanseq, i);
 }

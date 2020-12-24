@@ -7,7 +7,6 @@
 int main()
 {
 	std::cout << "»¶Ó­Ê¹ÓÃ»ô·òÂü±àÂëÆ÷" << std::endl;
-	std::string r;
 	while (true)
 	{
 		show_hint();
@@ -21,9 +20,6 @@ int main()
 			process2();
 			break;
 		case '3':
-			process3();
-			break;
-		case '4':
 			goto END;
 		default:
 			break;
